@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+# XDG
+export XDG_CONFIG_HOME=$HOME/.config
+
+# https://github.com/Phantas0s/.dotfiles/blob/master/zsh/zshenv
+. "$HOME/.cargo/env"
+
+# editor
+export EDITOR="vim"
+export VISUAL="vim"
+
+# zsh
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000                   # Maximum events in history file
