@@ -1,7 +1,6 @@
 local wezterm = require 'wezterm'
 
 local config = {
-  default_prog = { 'wsl.exe', '~' },
   font = wezterm.font 'JetBrainsMono Nerd Font',
   font_size = 9.0,
   color_scheme = 'Sandcastle (base16)',
@@ -11,6 +10,10 @@ local config = {
   window_close_confirmation = "NeverPrompt",
   window_decorations = "RESIZE",
 }
+
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+  config.default_prog = { 'wsl.exe', '~' }
+end
 
 config.visual_bell = {
   fade_in_duration_ms = 75,
